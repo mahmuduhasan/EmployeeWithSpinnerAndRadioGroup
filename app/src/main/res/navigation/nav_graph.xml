@@ -3,11 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/dataFragment">
+    app:startDestination="@id/employeeFragment">
 
     <fragment
         android:id="@+id/dataFragment"
         android:name="com.example.radiospinnerpractice.DataFragment"
         android:label="fragment_data"
-        tools:layout="@layout/fragment_data" />
+        tools:layout="@layout/fragment_data" >
+        <action
+            android:id="@+id/action_dataFragment_to_employeeFragment"
+            app:destination="@id/employeeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeFragment"
+        android:name="com.example.radiospinnerpractice.EmployeeFragment"
+        android:label="fragment_employee"
+        tools:layout="@layout/fragment_employee" >
+        <action
+            android:id="@+id/action_employeeFragment_to_dataFragment"
+            app:destination="@id/dataFragment"
+            app:popUpTo="@id/dataFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
