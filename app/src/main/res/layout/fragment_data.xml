@@ -217,7 +217,32 @@
                     android:gravity="center" />
             </LinearLayout>
         </LinearLayout>
-
+        <EditText
+            android:id="@+id/employeePhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            tools:text="Enter Phone Number"
+            android:hint="Enter Phone Number"
+            android:padding="10dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:background="@drawable/name_background" />
+        <EditText
+            android:id="@+id/employeeAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            tools:text="Enter Employee Address"
+            android:hint="Enter Employee Address"
+            android:padding="10dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:background="@drawable/name_background" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

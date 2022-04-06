@@ -2,13 +2,14 @@ package com.example.radiospinnerpractice
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.radiospinnerpractice.databinding.EmployeeViewBinding
 
-class EmployeeAdapter : ListAdapter<Employee, EmployeeAdapter.EmployeeViewHolder>(EmployeeDiff()) {
+class EmployeeAdapter(val callBack : (Employee) -> Unit) : ListAdapter<Employee, EmployeeAdapter.EmployeeViewHolder>(EmployeeDiff()) {
     class EmployeeViewHolder(private val binding: EmployeeViewBinding) : RecyclerView.ViewHolder(binding.root){
         fun employeeBind(employee : Employee){
             binding.employee = employee
@@ -33,5 +34,8 @@ class EmployeeAdapter : ListAdapter<Employee, EmployeeAdapter.EmployeeViewHolder
     override fun onBindViewHolder(holder: EmployeeViewHolder, position: Int) {
         val employee : Employee = getItem(position)
         holder.employeeBind(employee)
+        holder.itemView.setOnClickListener {
+            callBack(employee)
+        }
     }
 }

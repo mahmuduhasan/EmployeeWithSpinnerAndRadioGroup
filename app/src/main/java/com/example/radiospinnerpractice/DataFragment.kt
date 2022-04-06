@@ -50,6 +50,16 @@ class DataFragment : Fragment() {
                 return@setOnClickListener
             }
 
+            if(employeeBinding.employeePhone.text.isEmpty()){
+                employeeBinding.employeePhone.error = "Insert Employee Phone"
+                return@setOnClickListener
+            }
+
+            if(employeeBinding.employeeAddress.text.isEmpty()){
+                employeeBinding.employeeAddress.error = "Insert Employee Address"
+                return@setOnClickListener
+            }
+
             if(employeeBinding.dateShowTV.text.isEmpty()){
                 Toast.makeText(activity, "Insert Joining Date", Toast.LENGTH_SHORT).show()
                 employeeBinding.employeeName.error = "Insert Employee Name"
@@ -62,6 +72,8 @@ class DataFragment : Fragment() {
                 return@setOnClickListener
             }
 
+
+
             saveInfo()
         }
 
@@ -70,7 +82,8 @@ class DataFragment : Fragment() {
 
     private fun saveInfo() {
         val name = employeeBinding.employeeName.text.toString()
-
+        val phone = employeeBinding.employeePhone.text.toString()
+        val address = employeeBinding.employeeAddress.text.toString()
         val newEmployee = Employee(
             id = System.currentTimeMillis(),
             name = name,
@@ -78,7 +91,9 @@ class DataFragment : Fragment() {
             city = city,
             joiningDate = joiningDate,
             joiningTime = joiningTime,
-            gender = gender
+            gender = gender,
+            phone = phone,
+            address = address
         )
 
         employeeList.add(newEmployee)

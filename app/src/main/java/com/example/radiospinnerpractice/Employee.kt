@@ -7,7 +7,9 @@ data class Employee(
     val city: String,
     val joiningDate: String,
     val joiningTime: String,
-    val gender: String
+    val gender: String,
+    val phone : String,
+    val address: String
 )
 
 val employeeList = mutableListOf<Employee>()
