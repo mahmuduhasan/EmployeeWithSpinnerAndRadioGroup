@@ -46,17 +46,19 @@ class DataFragment : Fragment() {
 
         employeeBinding.submitData.setOnClickListener {
             if(employeeBinding.employeeName.text.isEmpty()){
-                Toast.makeText(activity, "Insert Employee Name", Toast.LENGTH_SHORT).show()
+                employeeBinding.employeeName.error = "Insert Employee Name"
                 return@setOnClickListener
             }
 
             if(employeeBinding.dateShowTV.text.isEmpty()){
                 Toast.makeText(activity, "Insert Joining Date", Toast.LENGTH_SHORT).show()
+                employeeBinding.employeeName.error = "Insert Employee Name"
                 return@setOnClickListener
             }
 
             if(employeeBinding.dateTimeTV.text.isEmpty()){
                 Toast.makeText(activity, "Insert Joining Date", Toast.LENGTH_SHORT).show()
+                employeeBinding.dateTimeTV.error = "Insert Employee Name"
                 return@setOnClickListener
             }
 

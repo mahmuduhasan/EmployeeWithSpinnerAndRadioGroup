@@ -24,7 +24,7 @@ class EmployeeFragment : Fragment() {
         adapter.submitList(employeeList)
 
         binding.addNew.setOnClickListener {
-            findNavController().navigate(R.id.action_employeeFragment_to_dataFragment,null)
+            findNavController().navigate(R.id.action_employeeFragment_to_dataFragment)
         }
         return binding.root
     }
